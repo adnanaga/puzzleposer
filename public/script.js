@@ -158,7 +158,7 @@ if(share){
     // feature detecting navigator.canShare() also implies
     // the same for the navigator.share()
     // if (!navigator.canShare) {
-    if (!navigator.userAgentData.mobile) {
+    if (!/Mobi|Android/i.test(navigator.userAgent)) {
       console.log(`Your browser doesn't support the Web Share API.`);
       if (connectionsGenerated) {
         navigator.clipboard
