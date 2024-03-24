@@ -351,9 +351,9 @@ function connectionsGenerator(color) {
         }
       }
       if (i == 3) {
-        answer = answer + arr[i];
+        answer = answer + mistake;
       } else {
-        answer = answer + arr[i] + "<br>";
+        answer = answer + mistake + "<br>";
       }
     }
   }
