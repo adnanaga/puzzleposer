@@ -1,5 +1,5 @@
 const wordleOpts = ["🟩", "🟨", "⬜️"];
-const wordleOptsFail = ["🟩", "🟨", "⬛️"];
+const wordleOptsFail = ["🟩", "🟨", "⬜️"];
 let connectionsOpts = ["🟦", "🟪", "🟩", "🟨"];
 let connectionsTotal = ["🟨🟨🟨🟨", "🟩🟩🟩🟩", "🟦🟦🟦🟦", "🟪🟪🟪🟪"];
 
