@@ -142,6 +142,7 @@ function wordleGenerator(num) {
   }
   let wordleNum = dateDiff("wordle");
   if (num == 7) {
+    answer = answer.slice(0,-4).trim()
     wordleGenerated.innerHTML =
       "Wordle " + wordleNum + " X/6" + "<br><br>" + answer;
   } else {
