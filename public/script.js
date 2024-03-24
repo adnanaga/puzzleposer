@@ -221,7 +221,7 @@ share.addEventListener("click", async () => {
 
 // -------------------------------------- Connections Code ------------------------------------------------------//
 
-if (connectionsGenerator) {
+if (connectionsGenerated) {
   let connTypeArray = ["purple", "blue", "green", "yellow"];
   let randomInt = getRandomIntIncl(3);
   connectionsGenerator(connTypeArray[randomInt]);
