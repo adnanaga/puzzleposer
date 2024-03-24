@@ -225,7 +225,7 @@ if (connectionsGenerator) {
   let connTypeArray = ["purple", "blue", "green", "yellow"];
   let randomInt = getRandomIntIncl(3);
   connectionsGenerator(connTypeArray[randomInt]);
-  document.getElementById(connTypeArray[randomInt]).checked == true;
+  document.getElementById(connTypeArray[randomInt]).checked = true;
 }
 
 function connectionsGenerator(color) {
