@@ -157,7 +157,8 @@ if(share){
   share.addEventListener("click", async () => {
     // feature detecting navigator.canShare() also implies
     // the same for the navigator.share()
-    if (!navigator.canShare) {
+    // if (!navigator.canShare) {
+    if (!/Mobi|Android/i.test(navigator.userAgent)) {
       console.log(`Your browser doesn't support the Web Share API.`);
       if (connectionsGenerated) {
         navigator.clipboard
@@ -203,39 +204,39 @@ if(share){
             alert("Couldn't copy for some reason");
           });
       }
-    }
-    
-    if (connectionsGenerated) {
-      console.log(connectionsGenerated)
-      try {
-        await navigator.share({
-          title: "Results",
-          text: br2nl(connectionsGenerated.innerHTML),
-        });
-        share.innerHTML = "Shared!";
-      } catch (error) {
-        // share.innerHTML = `Error: ${error.message}`;
-      }
-    } else if (wordleGenerated) {
-      try {
-        await navigator.share({
-          title: "Results",
-          text: br2nl(wordleGenerated.innerHTML),
-        });
-        share.innerHTML = "Shared!";
-      } catch (error) {
-        // share.innerHTML = `Error: ${error.message}`;
-      }
-    } else if (miniGenerated) {
-      try {
-        await navigator.share({
-          title: "Results",
-          text:  `https://www.nytimes.com/crosswords/game/mini ` +
-          br2nl(miniGenerated.innerHTML),
-        });
-        share.innerHTML = "Shared!";
-      } catch (error) {
-        // share.innerHTML = `Error: ${error.message}`;
+    } else {
+      if (connectionsGenerated) {
+        console.log(connectionsGenerated)
+        try {
+          await navigator.share({
+            title: "Results",
+            text: br2nl(connectionsGenerated.innerHTML),
+          });
+          share.innerHTML = "Shared!";
+        } catch (error) {
+          // share.innerHTML = `Error: ${error.message}`;
+        }
+      } else if (wordleGenerated) {
+        try {
+          await navigator.share({
+            title: "Results",
+            text: br2nl(wordleGenerated.innerHTML),
+          });
+          share.innerHTML = "Shared!";
+        } catch (error) {
+          // share.innerHTML = `Error: ${error.message}`;
+        }
+      } else if (miniGenerated) {
+        try {
+          await navigator.share({
+            title: "Results",
+            text:  `https://www.nytimes.com/crosswords/game/mini ` +
+            br2nl(miniGenerated.innerHTML),
+          });
+          share.innerHTML = "Shared!";
+        } catch (error) {
+          // share.innerHTML = `Error: ${error.message}`;
+        }
       }
     }
   });
