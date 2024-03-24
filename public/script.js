@@ -204,39 +204,39 @@ if(share){
             alert("Couldn't copy for some reason");
           });
       }
-    }
-    
-    if (connectionsGenerated) {
-      console.log(connectionsGenerated)
-      try {
-        await navigator.share({
-          title: "Results",
-          text: br2nl(connectionsGenerated.innerHTML),
-        });
-        share.innerHTML = "Shared!";
-      } catch (error) {
-        // share.innerHTML = `Error: ${error.message}`;
-      }
-    } else if (wordleGenerated) {
-      try {
-        await navigator.share({
-          title: "Results",
-          text: br2nl(wordleGenerated.innerHTML),
-        });
-        share.innerHTML = "Shared!";
-      } catch (error) {
-        // share.innerHTML = `Error: ${error.message}`;
-      }
-    } else if (miniGenerated) {
-      try {
-        await navigator.share({
-          title: "Results",
-          text:  `https://www.nytimes.com/crosswords/game/mini ` +
-          br2nl(miniGenerated.innerHTML),
-        });
-        share.innerHTML = "Shared!";
-      } catch (error) {
-        // share.innerHTML = `Error: ${error.message}`;
+    } else {
+      if (connectionsGenerated) {
+        console.log(connectionsGenerated)
+        try {
+          await navigator.share({
+            title: "Results",
+            text: br2nl(connectionsGenerated.innerHTML),
+          });
+          share.innerHTML = "Shared!";
+        } catch (error) {
+          // share.innerHTML = `Error: ${error.message}`;
+        }
+      } else if (wordleGenerated) {
+        try {
+          await navigator.share({
+            title: "Results",
+            text: br2nl(wordleGenerated.innerHTML),
+          });
+          share.innerHTML = "Shared!";
+        } catch (error) {
+          // share.innerHTML = `Error: ${error.message}`;
+        }
+      } else if (miniGenerated) {
+        try {
+          await navigator.share({
+            title: "Results",
+            text:  `https://www.nytimes.com/crosswords/game/mini ` +
+            br2nl(miniGenerated.innerHTML),
+          });
+          share.innerHTML = "Shared!";
+        } catch (error) {
+          // share.innerHTML = `Error: ${error.message}`;
+        }
       }
     }
   });
