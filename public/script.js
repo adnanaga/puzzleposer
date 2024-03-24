@@ -61,7 +61,9 @@ const funLine = document.getElementById("funline");
 
 
 window.addEventListener("load", (event) => {
-  funLine.innerHTML = funLines[Math.floor(Math.random()*funLines.length)];
+  if(funLine){
+    funLine.innerHTML = funLines[Math.floor(Math.random()*funLines.length)];
+  }
 });
 // -------------------------------------- Generate Code ------------------------------------------------------//
 
@@ -150,91 +152,95 @@ function wordleGenerator(num) {
   // description.innerHTML = `Click the share button below to copy the result`;
 }
 
-share.addEventListener("click", async () => {
-  // feature detecting navigator.canShare() also implies
-  // the same for the navigator.share()
-  if (!navigator.canShare) {
-    console.log(`Your browser doesn't support the Web Share API.`);
+if(share){
+
+  share.addEventListener("click", async () => {
+    // feature detecting navigator.canShare() also implies
+    // the same for the navigator.share()
+    if (!navigator.canShare) {
+      console.log(`Your browser doesn't support the Web Share API.`);
+      if (connectionsGenerated) {
+        navigator.clipboard
+          .writeText(br2nl(connectionsGenerated.innerHTML))
+          .then(() => {
+            share.innerHTML = "<b>Copied!</b>";
+          })
+          .catch((e) => {
+            console.log(e);
+            alert("something went wrong");
+          });
+      } else if (wordleGuesses) {
+        navigator.clipboard
+          .writeText(br2nl(wordleGenerated.innerHTML))
+          .then(() => {
+            share.innerHTML = "<b>Copied!</b>";
+          })
+          .catch((e) => {
+            console.log(e);
+            alert("Couldn't copy for some reason");
+          });
+      } else if (strandsGenerated) {
+        navigator.clipboard
+          .writeText(br2nl(strandsGenerated.innerHTML))
+          .then(() => {
+            share.innerHTML = "<b>Copied!</b>";
+          })
+          .catch((e) => {
+            console.log(e);
+            alert("Couldn't copy for some reason");
+          });
+      } else if (miniGenerated) {
+        navigator.clipboard
+          .writeText(
+            `https://www.nytimes.com/crosswords/game/mini ` +
+              br2nl(miniGenerated.innerHTML)
+          )
+          .then(() => {
+            share.innerHTML = "<b>Copied!</b>";
+          })
+          .catch((e) => {
+            console.log(e);
+            alert("Couldn't copy for some reason");
+          });
+      }
+    }
+    
     if (connectionsGenerated) {
-      navigator.clipboard
-        .writeText(br2nl(connectionsGenerated.innerHTML))
-        .then(() => {
-          share.innerHTML = "<b>Copied!</b>";
-        })
-        .catch((e) => {
-          console.log(e);
-          alert("something went wrong");
+      console.log(connectionsGenerated)
+      try {
+        await navigator.share({
+          title: "Results",
+          text: br2nl(connectionsGenerated.innerHTML),
         });
-    } else if (wordleGuesses) {
-      navigator.clipboard
-        .writeText(br2nl(wordleGenerated.innerHTML))
-        .then(() => {
-          share.innerHTML = "<b>Copied!</b>";
-        })
-        .catch((e) => {
-          console.log(e);
-          alert("Couldn't copy for some reason");
+        share.innerHTML = "Shared!";
+      } catch (error) {
+        // share.innerHTML = `Error: ${error.message}`;
+      }
+    } else if (wordleGenerated) {
+      try {
+        await navigator.share({
+          title: "Results",
+          text: br2nl(wordleGenerated.innerHTML),
         });
-    } else if (strandsGenerated) {
-      navigator.clipboard
-        .writeText(br2nl(strandsGenerated.innerHTML))
-        .then(() => {
-          share.innerHTML = "<b>Copied!</b>";
-        })
-        .catch((e) => {
-          console.log(e);
-          alert("Couldn't copy for some reason");
-        });
+        share.innerHTML = "Shared!";
+      } catch (error) {
+        // share.innerHTML = `Error: ${error.message}`;
+      }
     } else if (miniGenerated) {
-      navigator.clipboard
-        .writeText(
-          `https://www.nytimes.com/crosswords/game/mini ` +
-            br2nl(miniGenerated.innerHTML)
-        )
-        .then(() => {
-          share.innerHTML = "<b>Copied!</b>";
-        })
-        .catch((e) => {
-          console.log(e);
-          alert("Couldn't copy for some reason");
+      try {
+        await navigator.share({
+          title: "Results",
+          text:  `https://www.nytimes.com/crosswords/game/mini ` +
+          br2nl(miniGenerated.innerHTML),
         });
+        share.innerHTML = "Shared!";
+      } catch (error) {
+        // share.innerHTML = `Error: ${error.message}`;
+      }
     }
-  }
-  
-  if (connectionsGenerated) {
-    console.log(connectionsGenerated)
-    try {
-      await navigator.share({
-        title: "Results",
-        text: br2nl(connectionsGenerated.innerHTML),
-      });
-      share.innerHTML = "Shared!";
-    } catch (error) {
-      // share.innerHTML = `Error: ${error.message}`;
-    }
-  } else if (wordleGenerated) {
-    try {
-      await navigator.share({
-        title: "Results",
-        text: br2nl(wordleGenerated.innerHTML),
-      });
-      share.innerHTML = "Shared!";
-    } catch (error) {
-      // share.innerHTML = `Error: ${error.message}`;
-    }
-  } else if (miniGenerated) {
-    try {
-      await navigator.share({
-        title: "Results",
-        text:  `https://www.nytimes.com/crosswords/game/mini ` +
-        br2nl(miniGenerated.innerHTML),
-      });
-      share.innerHTML = "Shared!";
-    } catch (error) {
-      // share.innerHTML = `Error: ${error.message}`;
-    }
-  }
-});
+  });
+
+}
 
 // --------------------------------------------------------------------------------------------//
 
