@@ -157,7 +157,8 @@ if(share){
   share.addEventListener("click", async () => {
     // feature detecting navigator.canShare() also implies
     // the same for the navigator.share()
-    if (!navigator.canShare) {
+    // if (!navigator.canShare) {
+    if (!navigator.userAgentData.mobile) {
       console.log(`Your browser doesn't support the Web Share API.`);
       if (connectionsGenerated) {
         navigator.clipboard
