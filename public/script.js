@@ -3,6 +3,13 @@ const wordleOptsFail = ["🟩", "🟨", "⬛️"];
 let connectionsOpts = ["🟦", "🟪", "🟩", "🟨"];
 let connectionsTotal = ["🟨🟨🟨🟨", "🟩🟩🟩🟩", "🟦🟦🟦🟦", "🟪🟪🟪🟪"];
 
+let funLines = [
+  "Shhh your friends will never know 🤫",
+  "For when you’re having a X/6 day",
+  "For when the mini feels like a big one",
+  "For when your starter word wasn’t so good"
+]
+
 const strandsOpts = ["🔵"];
 
 let guessCount = 0;
@@ -48,6 +55,12 @@ const share = document.getElementById("share"); // Get the button from the page
 const shareSheet = document.getElementById("shareSheet");
 const startAgain = document.getElementById("startAgain"); // Get the button from the page
 
+const funLine = document.getElementById("funline");
+
+
+window.addEventListener("load", (event) => {
+  funLine.innerHTML = funLines[Math.floor(Math.random()*funLines.length)];
+});
 // -------------------------------------- Generate Code ------------------------------------------------------//
 
 // Add event listener to each radio button
