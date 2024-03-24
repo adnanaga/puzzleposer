@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="https://glitch.com/favicon.ico" />
+    <title>Puzzle Poseur: The Mini Crossword</title>
+
+    <!-- The website stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+
+    <!-- The website JavaScript file -->
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="content" role="main">
+        <div>
+          <a href="index.html"><div class="title">Puzzle Poseur</div></a>
+
+          <div class="subtitle">The Mini Crossword</div>
+        </div>
+        <!--         <div id="description" class="description">
+          Choose how long it took you to "finish" the mini.
+        </div> -->
+        <div style="position: relative;" class="dashedBox">
+          <div id="miniGenerated" class="speechBubble"></div>
+          <div id="lilTriangle"></div>
+        </div>
+        
+        <div id="crosswordTime" class="crosswordOptions">
+          <input
+            id="timeSelect"
+            class="hintSelect"
+            type="range"
+            min="0"
+            value="2"
+            max="4"
+            step="1"
+            style="width: 330px; background: #6493e6"
+          />
+          <div id="miniTimes" class="crosswordTimes">
+            <div class="bubble">Under 10 seconds</div>
+            <div class="bubble">Under 30 seconds</div>
+            <div class="bubble">Under 2 minutes</div>
+            <div class="bubble">Under 5 minutes</div>
+            <div class="bubble">Over 10 Minutes</div>
+          </div>
+        </div>
+
+        <!--           March 19th - 1004 -->
+
+        <!--         <button id="miniGen" class="generate">
+          <b>Generate your results</b>
+        </button> -->
+        <div id="shareSheet" class="shareSection">
+          <button id="share" class="generate">
+            <b>Copy to clipboard</b>
+          </button>
+          <div class="fake">Fake some others:</div>
+          <div class="otherGames">
+            <a href="/wordle.html" class="startAgain wordleGreen">
+              <img
+                style="height: 42px; vertical-align: middle"
+                src="https://cdn.glitch.global/1deee91c-6d13-44db-b809-2bb9bb45edd9/wordle.svg?v=1710820713947"
+            /></a>
+            <a href="/connections.html" class="startAgain connectionsPurple">
+              <img
+                style="height: 50px; vertical-align: middle"
+                src="https://cdn.glitch.global/1deee91c-6d13-44db-b809-2bb9bb45edd9/connections.svg?v=1710820718292"
+            /></a>
+            <a href="/mini.html" class="startAgain miniBlue">
+              <img
+                style="height: 50px; vertical-align: middle"
+                src="https://cdn.glitch.global/1deee91c-6d13-44db-b809-2bb9bb45edd9/mini.svg?v=1711136920621"
+            /></a>
+            <!--             <a href="/strands.html" class="startAgain strandsBlue">
+              <img
+                style="height: 50px; vertical-align: middle"
+                src="https://cdn.glitch.global/1deee91c-6d13-44db-b809-2bb9bb45edd9/strands.svg?v=1710820716255"
+            /></a> -->
+          </div>
+        </div>
+        <footer class="footer">
+          <div>
+            Made with ❤️ by <a href="http://adnanaga.com"><u>adnan</u></a> and
+            <a href="http://joshjoshjosh.net"><u>josh</u></a>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

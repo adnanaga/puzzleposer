@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="https://glitch.com/favicon.ico" />
+
+    <!--
+      This is the page head - it contains info the browser uses
+      Like the title, which appears on the browser tab but not inside the page
+      Further down you'll see the content that displays in the page
+    -->
+    <title>Puzzle Poseur: Strands</title>
+
+    <!-- The website stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+
+    <!-- The website JavaScript file -->
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="content" role="main">
+        <div>
+          <a href="index.html"><div class="title">Puzzle Poseur</div></a>
+          <div class="subtitle">Strands</div>
+        </div>
+        <div id="description" class="description">
+          Choose how many hints you used:
+        </div>
+
+        <div id="hintOptions" class="strandsOptions">
+          <input
+            id="hintSelect"
+            class="hintSelect"
+            type="range"
+            min="0"
+            value="0"
+            max="8"
+            step="1"
+          />
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              font-size: 40px;
+              margin-top: 10px;
+            "
+          >
+            <div id="hintChoiceL" class="bubble">0</div>
+            <div id="hintChoiceR" class="bubble">8</div>
+          </div>
+        </div>
+
+        <div id="spangramDescription" class="description">
+          Choose when you got the Spangram:
+        </div>
+
+        <div id="strandsOptions" class="strandsOptions">
+          <input
+            id="spangramSelect"
+            class="spangramSelect"
+            type="range"
+            min="0"
+            value="3"
+            max="7"
+            step="1"
+          />
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              font-size: 40px;
+              margin-top: 10px;
+            "
+          >
+            <div id="spangramChoiceL" class="bubble">1</div>
+            <div id="spangramChoiceR" class="bubble">8</div>
+          </div>
+        </div>
+
+        <div id="strandsGenerated" style="display: none">
+          <!--           March 19th - 1004 -->
+        </div>
+
+        <button id="strandsGen" class="generate">
+          <b>Generate your results</b>
+        </button>
+
+        <div id="shareSheet" class="shareSection" style="display: none">
+          <button id="share" class="generate">
+            <b>Share your results</b>
+          </button>
+          <div class="fake">Fake some others:</div>
+          <div class="otherGames">
+            <a href="/wordle.html" class="startAgain wordleGreen">
+              <img
+                style="height: 42px; vertical-align: middle"
+                src="https://cdn.glitch.global/1deee91c-6d13-44db-b809-2bb9bb45edd9/wordle.svg?v=1710820713947"
+            /></a>
+            <a href="/connections.html" class="startAgain connectionsPurple">
+              <img
+                style="height: 50px; vertical-align: middle"
+                src="https://cdn.glitch.global/1deee91c-6d13-44db-b809-2bb9bb45edd9/connections.svg?v=1710820718292"
+            /></a>
+            <a href="/mini.html" class="startAgain miniBlue">
+              <img
+                style="height: 50px; vertical-align: middle"
+                src="https://cdn.glitch.global/1deee91c-6d13-44db-b809-2bb9bb45edd9/mini.svg?v=1711136920621"
+            /></a>
+          </div>
+        </div>
+        <footer class="footer">
+          <div>
+            Made with ❤️ by <a href="http://adnanaga.com"><u>adnan</u></a> and
+            <a href="http://joshjoshjosh.net"><u>josh</u></a>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

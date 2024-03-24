@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- 
+      This is an HTML comment
+      You can write text in a comment and the content won't be visible in the page
+    -->
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="https://glitch.com/favicon.ico" />
+
+    <!--
+      This is the page head - it contains info the browser uses
+      Like the title, which appears on the browser tab but not inside the page
+      Further down you'll see the content that displays in the page
+    -->
+    <title>Puzzle Poseur: Wordle</title>
+
+    <!-- The website stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+
+    <!-- The website JavaScript file -->
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    <!--
+      The body includes the content you see in the page
+      Each element is defined using tags, like this <div></div>
+      The attributes like class="wrapper" let us style elements in the CSS
+    -->
+    <div class="wrapper">
+      <div class="content" role="main">
+        <div>
+          <a href="index.html"><div class="title">Puzzle Poseur</div></a>
+
+          <div class="subtitle">Wordle</div>
+        </div>
+        <div style="position: relative;" class="dashedBox">
+          <div id="wordleGenerated" class="speechBubble"></div>
+          <div id="lilTriangle"></div>
+        </div>
+        
+        <div id="instructions" class="description">
+          Select how many guesses it took you to solve the Wordle.
+        </div>
+        <div id="wordleGuesses" class="wordleGuesses">
+          <input type="radio" id="one" name="guesses" value="1" />
+          <label id="oneGuess" for="one">1</label>
+          <input type="radio" id="two" name="guesses" value="2" />
+          <label for="two">2</label>
+          <input type="radio" id="three" name="guesses" value="3" checked />
+          <label for="three">3</label>
+          <input type="radio" id="four" name="guesses" value="4" />
+          <label for="four">4</label>
+          <input type="radio" id="five" name="guesses" value="5" />
+          <label for="five">5</label>
+          <input type="radio" id="six" name="guesses" value="6" />
+          <label for="six">6</label>
+          <input type="radio" id="seven" name="guesses" value="7" />
+          <label for="seven">X</label>
+        </div>
+        <div id="shareSheet" class="shareSection">
+          <button id="share" class="generate">
+            <b>Copy to clipboard</b>
+          </button>
+          <div class="fake">Fake some others:</div>
+          <div class="otherGames">
+            <a href="/wordle.html" class="startAgain wordleGreen">
+              <img
+                style="height: 42px; vertical-align: middle"
+                src="https://cdn.glitch.global/1deee91c-6d13-44db-b809-2bb9bb45edd9/wordle.svg?v=1710820713947"
+            /></a>
+            <a href="/connections.html" class="startAgain connectionsPurple">
+              <img
+                style="height: 50px; vertical-align: middle"
+                src="https://cdn.glitch.global/1deee91c-6d13-44db-b809-2bb9bb45edd9/connections.svg?v=1710820718292"
+            /></a>
+            <!--             <a href="/strands.html" class="startAgain strandsBlue">
+              <img
+                style="height: 50px; vertical-align: middle"
+                src="https://cdn.glitch.global/1deee91c-6d13-44db-b809-2bb9bb45edd9/strands.svg?v=1710820716255"
+            /></a> -->
+            <a href="/mini.html" class="startAgain miniBlue">
+              <img
+                style="height: 50px; vertical-align: middle"
+                src="https://cdn.glitch.global/1deee91c-6d13-44db-b809-2bb9bb45edd9/mini.svg?v=1711136920621"
+            /></a>
+          </div>
+        </div>
+        <footer class="footer">
+          <div>
+            Made with ❤️ by <a href="http://adnanaga.com"><u>adnan</u></a> and
+            <a href="http://joshjoshjosh.net"><u>josh</u></a>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

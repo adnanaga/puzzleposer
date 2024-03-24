@@ -1,0 +1,526 @@
+/******************************************************************************
+START Glitch hello-app default styles
+
+The styles in this section do some minimal CSS resets, set default fonts and 
+colors, and handle the layout for our footer and "Remix on Glitch" button. If
+you're new to CSS they may seem a little complicated, but you can scroll down
+to this section's matching END comment to see page-specific styles.
+******************************************************************************/
+
+/* 
+  The style rules specify elements by type and by attributes such as class and ID
+  Each section indicates an element or elements, then lists the style properties to apply
+  See if you can cross-reference the rules in this file with the elements in index.html
+*/
+
+/* Our default values set as CSS variables */
+:root {
+  --color-bg: #ffffff;
+  --color-text-main: #000000;
+  --color-primary: #ffff00;
+  --wrapper-height: 70vh;
+  --image-max-width: 300px;
+  --image-margin: 3rem;
+  --font-family: "HK Grotesk";
+  --font-family-header: "HK Grotesk";
+  --chosen-width: 87vw;
+  --max-width: 330px;
+  --max-width-button: 270px;
+  --answer-font: 18px;
+}
+
+@font-face {
+  font-family: "wordle";
+  src: url("https://cdn.glitch.global/1deee91c-6d13-44db-b809-2bb9bb45edd9/karnak-normal.woff2?v=1710877858124");
+}
+
+@font-face {
+  font-family: "wordle";
+  font-weight: bold;
+  src: url("https://cdn.glitch.global/1deee91c-6d13-44db-b809-2bb9bb45edd9/karnakcondensed-normal.woff2?v=1710877859312");
+}
+
+/* Basic page style resets */
+* {
+  box-sizing: border-box;
+}
+[hidden] {
+  display: none !important;
+}
+
+/* Import fonts */
+@font-face {
+  font-family: HK Grotesk;
+  src: url("https://cdn.glitch.me/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Regular.otf?v=1603136326027")
+    format("opentype");
+}
+@font-face {
+  font-family: HK Grotesk;
+  font-weight: bold;
+  src: url("https://cdn.glitch.me/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Bold.otf?v=1603136323437")
+    format("opentype");
+}
+
+/* Navigation grid */
+.footer {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 16px;
+  width: var(--chosen-width);
+  max-width: var(--max-width);
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+  border-style: none;
+}
+.footer a:hover {
+  background: var(--color-primary);
+}
+
+.footer .links {
+  padding: 0.5rem 1rem 1.5rem;
+  white-space: nowrap;
+}
+
+.divider {
+  padding: 0 1rem;
+}
+
+/******************************************************************************
+END Glitch hello-app default styles
+******************************************************************************/
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  font-family: HK Grotesk;
+  background-color: var(--color-bg);
+  overflow-x: hidden;
+}
+
+/* Page structure */
+.wrapper {
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 650px;
+}
+
+/* Very light scaling for our illustration */
+.title {
+  font-family: wordle;
+  font-weight: bold;
+  font-size: 52px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.subhead {
+  font-family: wordle;
+  font-size: 28px;
+  width: 300px;
+  text-align: center;
+}
+
+/* Very light scaling for our illustration */
+.subtitle {
+  color: #000000;
+  font-family: wordle;
+  font-style: normal;
+  font-size: 42px;
+  text-align: center;
+}
+
+/* Very light scaling for our illustration */
+.illustration {
+  max-width: 100%;
+  max-height: var(--image-max-width);
+  margin-top: var(--image-margin);
+}
+
+/* Instructions */
+.instructions {
+  margin: 1rem auto 0;
+}
+
+.description {
+  text-align: center;
+  width: var(--chosen-width);
+  max-width: var(--max-width);
+  font-size: 15px;
+}
+
+.buttonGroup {
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  justify-content: space-around;
+}
+
+/* Button - Add it from the README instructions */
+.button {
+  background: #d9d9d9;
+  border-radius: 50px;
+  padding: 0.5rem 2rem;
+  width: var(--chosen-width);
+  max-width: var(--max-width);
+  transition: 500ms;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+#share {
+  background: #000000;
+  color: #ffffff;
+  font-size: 24px;
+  border-radius: 50px;
+  min-height: 75px;
+  transition: 500ms;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  max-width: var(--max-width-button);
+  margin-bottom: 16px;
+}
+
+#connectionsGen {
+  background: #000000;
+  color: #ffffff;
+  font-size: 16px;
+  border-radius: 50px;
+  height: 50px;
+  width: 59vw;
+  transition: 500ms;
+  text-align: center;
+
+  max-width: var(--max-width);
+}
+
+#strandsGen {
+  background: #000000;
+  color: #ffffff;
+  font-size: 16px;
+  border-radius: 50px;
+  height: 50px;
+  width: 59vw;
+  transition: 500ms;
+  text-align: center;
+
+  max-width: var(--max-width-button);
+}
+
+.generate {
+  background: #000000;
+  color: #ffffff;
+  font-size: 16px;
+  border-radius: 50px;
+  height: 50px;
+  width: 59vw;
+  transition: 500ms;
+  text-align: center;
+
+  max-width: var(--max-width-button);
+}
+
+#miniGen {
+}
+
+.startAgain {
+  display: flex;
+  border-radius: 100px;
+  border: 2px solid #000000;
+  text-align: center;
+  background: #ffffff;
+  color: #000000;
+  width: 70px;
+  height: 70px;
+  font-size: 16px;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+  padding: 7.5px;
+  max-width: var(--max-width-button);
+}
+
+.shareSection {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  max-width: var(--max-width);
+  align-items: center;
+  justify-content: space-between;
+/*   height: 25vh; */
+}
+
+.otherGames {
+  display: flex;
+  width: 250px;
+  justify-content: space-evenly;
+  margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.wordleGreen {
+  background: #79a86b;
+}
+
+.connectionsPurple {
+  background: #bd70c4;
+}
+
+.strandsBlue {
+  background: #aae5f2;
+}
+
+.miniBlue {
+  background: #6493e6;
+}
+
+/* Subheading */
+h2 {
+  color: #2800ff;
+}
+
+.wordleGuesses {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+  justify-content: space-around;
+  width: 70vw;
+  max-width: var(--max-width);
+  margin-bottom: 20px;
+}
+
+.wordleGuesses label,
+.wordleGuesses input {
+  text-align: center;
+  align-items: center;
+  background: #e3e3e1;
+  height: 45px;
+  width: 45px;
+  max-width: var(--max-width);
+  border: 1px solid #000000;
+  font-size: 20px;
+  font-family: "wordle";
+  display: flex;
+  justify-content: center;
+}
+
+.wordleGuesses input[type="radio"] {
+  display: none;
+}
+
+.wordleGuesses label:hover {
+  background: #79a86b;
+}
+
+.wordleGuesses input[type="radio"]:checked + label {
+  background: #79a86b;
+}
+
+#instructions {
+  margin-bottom: 10px;
+}
+
+#wordleGenerated {
+/*   height: 170px; */
+  display: flex;
+  align-items: center;
+/*   text-align: center; */
+  font-size: var(--answer-font);
+}
+
+.footerNotes {
+  width: var(--chosen-width);
+  max-width: var(--max-width);
+}
+
+/* Connections */
+
+.connectionsOptions {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  gap: 10px;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+#connectionsGenerated {
+/*   min-height: 250px; */
+  display: flex;
+  align-items: center;
+/*   text-align: center; */
+  font-size: var(--answer-font);
+}
+
+.dashedBox {
+  border: 2px dashed black;
+  border-radius: 20px;
+  margin: 30px;
+}
+
+.speechBubble {
+  background: #e3e3e1;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 20px;
+  text-align: left;
+}
+
+#lilTriangle {
+  position: absolute;
+  bottom: 20px;
+  right: 8px;
+  width: 0;
+  height: 0;
+  border: 16px solid transparent;
+  border-top: 0;
+  border-bottom: 20px solid #e3e3e1;
+}
+
+.connectionsOptions label,
+.connectionsOptions input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  background: #e3e3e1;
+  height: 90px;
+  width: 100px;
+  border-radius: 7px;
+  font-size: 17px;
+}
+
+.connectionsOptions input[type="radio"] {
+  display: none;
+}
+
+.connectionsOptions label:hover + label[for="purple"] {
+  background: #b284c1;
+}
+
+.connectionsOptions label:hover + label[for="blue"] {
+  background: #b4c4eb;
+}
+
+.connectionsOptions label:hover + label[for="green"] {
+  background: #a7c168;
+}
+
+.connectionsOptions label:hover + label[for="yellow"] {
+  background: #f5df7e;
+}
+
+.connectionsOptions input[type="radio"]:checked + label[for="purple"] {
+  background: #b284c1;
+}
+
+.connectionsOptions input[type="radio"]:checked + label[for="blue"] {
+  background: #b4c4eb;
+}
+
+.connectionsOptions input[type="radio"]:checked + label[for="green"] {
+  background: #a7c168;
+}
+
+.connectionsOptions input[type="radio"]:checked + label[for="yellow"] {
+  background: #f5df7e;
+}
+
+.connectionsTitle {
+  font-size: 20px;
+  font-weight: bold;
+}
+.connectionsSubtitle {
+  font-size: 10px;
+}
+
+input[type="range"] {
+  /* removing default appearance */
+  -webkit-appearance: none;
+  appearance: none;
+  /* creating a custom design */
+  width: 100vw;
+  max-width: var(--max-width);
+  cursor: pointer;
+  outline: none;
+  height: 15px;
+  border-radius: 16px;
+}
+
+.hintSelect,
+input[type="range"]::-webkit-slider-thumb {
+  /* removing default appearance */
+  -webkit-appearance: none;
+  appearance: none;
+  /* creating a custom design */
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  position: relative;
+  background: #6493e6;
+}
+
+#strandsGenerated {
+  align-items: center;
+  font-size: var(--answer-font);
+  text-align: center;
+}
+
+.crosswordOptions {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 20vh;
+  max-width: var(--max-width);
+}
+
+.crosswordTimes {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  font-size: 14px;
+}
+
+#output {
+  font-size: 32px;
+  position: relative;
+}
+
+.spangramSelect {
+  background: #f5df7e;
+}
+
+.hintSelect {
+  background: #b8deec;
+}
+
+#miniGenerated {
+  display: flex;
+  align-items: center;
+/*   text-align: center; */
+  font-size: var(--answer-font);
+  width: 300px;
+/*   border: 2px solid black; */
+/*   padding: 1rem; */
+}
+
+.fake {
+  font-size: 20px;
+}

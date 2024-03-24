@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="https://glitch.com/favicon.ico" />
+
+    <!--
+      This is the page head - it contains info the browser uses
+      Like the title, which appears on the browser tab but not inside the page
+      Further down you'll see the content that displays in the page
+    -->
+    <title>Puzzle Poseur: Connections</title>
+
+    <!-- The website stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+
+    <!-- The website JavaScript file -->
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="content" role="main">
+        <div>
+          <a href="index.html"><div class="title">Puzzle Poseur</div></a>
+
+          <div class="subtitle">Connections</div>
+        </div>
+        <div style="position: relative;" class="dashedBox">
+          <div id="connectionsGenerated" class="speechBubble"></div>
+          <div id="lilTriangle"></div>
+        </div>
+        <div id="instructions" class="description">
+          Select how well your Connections game went.
+        </div>
+        <div id="connectionsOptions" class="connectionsOptions">
+          <input type="radio" id="purple" name="guesses" value="purple" />
+          <label for="purple" class="connectionsTitle"
+            >KILLED IT<br /><span class="connectionsSubtitle"
+              >(PURPLE FIRST)</span
+            ></label
+          >
+          <input type="radio" id="blue" name="guesses" value="blue" />
+          <label for="blue" class="connectionsTitle"
+            >SO GOOD<br /><span class="connectionsSubtitle"
+              >(NO MISTAKES)</span
+            ></label
+          >
+          <input type="radio" id="green" name="guesses" value="green" />
+          <label for="green" class="connectionsTitle"
+            >NOT BAD<br /><span class="connectionsSubtitle"
+              >(1-2 MISTAKES)</span
+            ></label
+          >
+          <input type="radio" id="yellow" name="guesses" value="yellow" />
+          <label for="yellow" class="connectionsTitle"
+            >YIKES<br /><span class="connectionsSubtitle"
+              >(DIDN'T GET IT)</span
+            ></label
+          >
+        </div>
+
+
+        <div id="shareSheet" class="shareSection">
+          <button id="share" class="generate">
+            <b>Copy to clipboard</b>
+          </button>
+          <div class="fake">Fake some others:</div>
+          <div class="otherGames">
+            <a href="/wordle.html" class="startAgain wordleGreen">
+              <img
+                style="height: 42px; vertical-align: middle"
+                src="https://cdn.glitch.global/1deee91c-6d13-44db-b809-2bb9bb45edd9/wordle.svg?v=1710820713947"
+            /></a>
+            <a href="/connections.html" class="startAgain connectionsPurple">
+              <img
+                style="height: 50px; vertical-align: middle"
+                src="https://cdn.glitch.global/1deee91c-6d13-44db-b809-2bb9bb45edd9/connections.svg?v=1710820718292"
+            /></a>
+            <!--             <a href="/strands.html" class="startAgain strandsBlue">
+              <img
+                style="height: 50px; vertical-align: middle"
+                src="https://cdn.glitch.global/1deee91c-6d13-44db-b809-2bb9bb45edd9/strands.svg?v=1710820716255"
+            /></a> -->
+            <a href="/mini.html" class="startAgain miniBlue">
+              <img
+                style="height: 50px; vertical-align: middle"
+                src="https://cdn.glitch.global/1deee91c-6d13-44db-b809-2bb9bb45edd9/mini.svg?v=1711136920621"
+            /></a>
+          </div>
+        </div>
+        <footer class="footer">
+          <div>
+            Made with ❤️ by <a href="http://adnanaga.com"><u>adnan</u></a> and
+            <a href="http://joshjoshjosh.net"><u>josh</u></a>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>
