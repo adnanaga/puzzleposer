@@ -8,7 +8,7 @@ const strandsOpts = ["🔵"];
 let guessCount = 0;
 let answer = "";
 
-let wordleNum = 1004;
+let wordleNum = 1003;
 let connectionsNum = 281; //This is wrong
 let strandsNum = 15;
 
