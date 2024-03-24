@@ -222,7 +222,8 @@ share.addEventListener("click", async () => {
     try {
       await navigator.share({
         title: "Results",
-        text: br2nl(miniGenerated.innerHTML),
+        text:  `https://www.nytimes.com/crosswords/game/mini ` +
+        br2nl(miniGenerated.innerHTML),
       });
       share.innerHTML = "Shared!";
     } catch (error) {
