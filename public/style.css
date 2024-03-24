@@ -115,7 +115,7 @@ body {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  min-height: 650px;
+  min-height: 620px;
 }
 
 /* Very light scaling for our illustration */
