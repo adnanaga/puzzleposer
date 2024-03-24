@@ -8,7 +8,8 @@ let funLines = [
   "For when you’re having a X/6 day",
   "For when the mini feels like a big one",
   "For when your starter word wasn’t so good",
-  "For when the connections are all two letter words"
+  "For when the connections are all two letter words", 
+  "For when Wyna's going on about birds again"
 ]
 
 const strandsOpts = ["🔵"];
@@ -256,7 +257,11 @@ function connectionsGenerator(color) {
     // console.log(newArr);
     answer = "🟪🟪🟪🟪" + "<br>";
     for (let i = 0; i < 3; i++) {
-      answer = answer + arr[i] + "<br>";
+      if (i == 2) {
+        answer = answer + arr[i];
+      } else {
+        answer = answer + arr[i] + "<br>";
+      }
     }
   }
 
@@ -265,7 +270,11 @@ function connectionsGenerator(color) {
     answer = arr.splice(getRandomIntIncl(2), 1) + "<br>";
     let newArr = shuffle(arr);
     for (let i = 0; i < 3; i++) {
-      answer = answer + arr[i] + "<br>";
+      if (i == 2) {
+        answer = answer + arr[i];
+      } else {
+        answer = answer + arr[i] + "<br>";
+      }
     }
   }
 
@@ -298,7 +307,11 @@ function connectionsGenerator(color) {
         }
         answer += mistake + "<br>";
       }
-      answer += arr[i] + "<br>";
+      if (i == arr.length-1) {
+        answer = answer + arr[i];
+      } else {
+        answer = answer + arr[i] + "<br>";
+      }
       freeColours.splice(freeColours.indexOf(Array.from(arr[i])[0]), 1);
     }
   }
@@ -334,7 +347,11 @@ function connectionsGenerator(color) {
           mistake += freeColours[newColIndex];
         }
       }
-      answer += mistake + "<br>";
+      if (i == 3) {
+        answer = answer + arr[i];
+      } else {
+        answer = answer + arr[i] + "<br>";
+      }
     }
   }
 
