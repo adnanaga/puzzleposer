@@ -72,18 +72,21 @@ radioButtons.forEach(function (radioButton) {
     if (this.checked) {
       guessCount = this.value;
       if (wordleGuesses) {
+        share.innerHTML = "<b>Share</b>";
         wordleGenerator(guessCount);
       }
       if (connectionsOptions) {
         // connectionsGen.style.opacity = "100%";
         // connectionsGen.disabled = false;
         // console.log(guessCount);
+        share.innerHTML = "<b>Share</b>";
         connectionsGenerator(guessCount);
       }
 
       if (miniGen) {
         // miniGen.style.opacity = "100%";
         // miniGen.disabled = false;
+        share.innerHTML = "<b>Share</b>";
         miniGenerator(guessCount);
       }
     }
@@ -425,6 +428,7 @@ if (miniGenerated) {
   const timeSlider = document.getElementById("timeSelect");
   timeSlider.addEventListener("input", function () {
     const timeVal = document.getElementById("timeSelect").value;
+    share.innerHTML = "<b>Share</b>";
     miniGenerator(timeVal);
   });
   // timeSlider.addEventListener('change', function() {
