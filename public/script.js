@@ -7,7 +7,8 @@ let funLines = [
   "Shhh your friends will never know 🤫",
   "For when you’re having a X/6 day",
   "For when the mini feels like a big one",
-  "For when your starter word wasn’t so good"
+  "For when your starter word wasn’t so good",
+  "For when the connections are all two letter words"
 ]
 
 const strandsOpts = ["🔵"];
