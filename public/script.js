@@ -231,8 +231,8 @@ if(share){
         try {
           await navigator.share({
             title: "Results",
-            text:  `https://www.nytimes.com/crosswords/game/mini ` +
-            br2nl(miniGenerated.innerHTML),
+            url: 'https://www.nytimes.com/crosswords/game/mini',
+            text:  br2nl(miniGenerated.innerHTML),
           });
           share.innerHTML = "Shared!";
         } catch (error) {
